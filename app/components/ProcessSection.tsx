@@ -1,16 +1,33 @@
 'use client'
 
 import { motion, useInView } from "framer-motion"
-import { Linkedin, Mail, Calendar } from "lucide-react"
 import { useState, useRef } from "react"
+import { Scan, Database, LineChart } from "lucide-react"
 
 export default function ProcessSection() {
-  const [showFounder, setShowFounder] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(contentRef, {
     amount: 0.3,
-    once: false
+    once: true
   })
+
+  const processCards = [
+    {
+      icon: Scan,
+      title: "SCAN",
+      description: "Upload and scan your core samples with our proprietary measurement system"
+    },
+    {
+      icon: Database,
+      title: "ANALYZE",
+      description: "Our AI-powered system processes and standardizes your structural data"
+    },
+    {
+      icon: LineChart,
+      title: "VISUALIZE",
+      description: "Get real-time 3D visualizations and insights for better decision making"
+    }
+  ]
 
   return (
     <section className="relative min-h-screen bg-black/50 backdrop-blur-sm">
@@ -31,16 +48,16 @@ export default function ProcessSection() {
 
               {/* Animated Content */}
               <div ref={contentRef}>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="space-y-8"
+                  className="space-y-8 mb-16"
                 >
-                  <div className="flex justify-between items-start">
+                  <div className="flex justify-end items-start">
                     <div className="space-y-8">
                       <div className="space-y-6">
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, y: 20 }}
                           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                           transition={{ duration: 0.8, delay: 0.4 }}
@@ -49,7 +66,7 @@ export default function ProcessSection() {
                           <span className="text-blue-400 text-xs tracking-wider">PRIVATE BETA</span>
                           <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                         </motion.div>
-                        
+
                         <motion.p 
                           initial={{ opacity: 0, y: 20 }}
                           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -60,86 +77,106 @@ export default function ProcessSection() {
                         </motion.p>
                       </div>
                     </div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.8, delay: 0.8 }}
-                    >
-                      <button
-                        onClick={() => setShowFounder(true)}
-                        className="button-flare inline-block bg-blue-400/10 text-blue-400 px-6 py-3 text-sm tracking-wider rounded-[15%] hover:bg-blue-400/20 transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.3)]"
-                      >
-                        <span className="relative z-10">MEET THE FOUNDERS</span>
-                      </button>
-                    </motion.div>
                   </div>
-                  
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.8, delay: 1.0 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12"
-                  >
-                    <div className="space-y-4">
-                      <h3 className="text-blue-400 text-sm tracking-wider text-right">THE CHALLENGE</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed text-right">
-                        Traditional structural logging relies on manual measurements and subjective interpretations, leading to inconsistent data collection and potential errors that can impact exploration decisions.
-                      </p>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <h3 className="text-blue-400 text-sm tracking-wider text-right">OUR SOLUTION</h3>
-                      <p className="text-gray-400 text-sm leading-relaxed text-right">
-                        Andes Oriented Core digitizes and standardizes the entire structural analysis process, from core orientation to final interpretation, ensuring consistent, reliable data for better drilling decisions.
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
-                    className="pt-12"
-                  >
-                    <div className="flex items-center justify-end space-x-3 mb-6">
-                      <span className="text-blue-400 text-xs tracking-wider">CURRENTLY IN DEVELOPMENT</span>
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                    </div>
-                    
-                    <h3 className="text-blue-400 text-sm tracking-wider mb-4 text-right">THE PROCESS</h3>
-                    <div className="space-y-4">
-                      {[
-                        "Digital core orientation using our proprietary measurement system",
-                        "Automated structural feature detection and measurement",
-                        "Standardized data collection with built-in validation",
-                        "Real-time structural interpretation and 3D modeling",
-                        "Complete data traceability reducing measurement errors and optimizing drilling operations",
-                        "Seamless integration with industry-leading geological and mining software"
-                      ].map((text, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                          transition={{ duration: 0.8, delay: 1.4 + (index * 0.2) }}
-                          className="flex items-start justify-end space-x-4"
-                        >
-                          <p className="text-gray-400 text-sm leading-relaxed text-right relative">
-                            {text}
-                          </p>
-                          <div className="flex items-center">
-                            <div className="relative w-8 text-right">
-                              <span className="text-sm inline-block text-blue-400">
-                                {(index + 1).toString().padStart(2, '0')}
-                              </span>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
                 </motion.div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Process Cards - Full Width Container */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 w-full"
+        >
+          {processCards.map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 1.0 + (index * 0.2) }}
+              className="bg-blue-400/5 backdrop-blur-sm border border-blue-400/10 rounded-lg p-6 hover:bg-blue-400/10 transition-all duration-300 group"
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="w-12 h-12 rounded-full bg-blue-400/10 flex items-center justify-center group-hover:bg-blue-400/20 transition-all duration-300">
+                  <card.icon className="w-6 h-6 text-blue-400" />
+                </div>
+                <h3 className="text-blue-400 text-sm tracking-wider">{card.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{card.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Challenge/Solution Section - Full Width */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 mt-16 w-full"
+        >
+          <div className="space-y-4">
+            <h3 className="text-blue-400 text-sm tracking-wider text-right">THE CHALLENGE</h3>
+            <p className="text-gray-400 text-sm leading-relaxed text-right">
+              Traditional structural logging relies on manual measurements and subjective interpretations, leading to inconsistent data collection and potential errors that can impact exploration decisions.
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <h3 className="text-blue-400 text-sm tracking-wider text-right">OUR SOLUTION</h3>
+            <p className="text-gray-400 text-sm leading-relaxed text-right">
+              Andes Oriented Core digitizes and standardizes the entire structural analysis process, from core orientation to final interpretation, ensuring consistent, reliable data for better drilling decisions.
+            </p>
+          </div>
+        </motion.div>
+
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl ml-auto">
+            <div className="space-y-8">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="pt-12 mt-16"
+              >
+                <div className="flex items-center justify-end space-x-3 mb-6">
+                  <span className="text-blue-400 text-xs tracking-wider">CURRENTLY IN DEVELOPMENT</span>
+                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                </div>
+
+                <h3 className="text-blue-400 text-sm tracking-wider mb-4 text-right">THE PROCESS</h3>
+                <div className="space-y-4">
+                  {[
+                    "Digital core orientation using our proprietary measurement system",
+                    "Automated structural feature detection and measurement",
+                    "Standardized data collection with built-in validation",
+                    "Real-time structural interpretation and 3D modeling",
+                    "Complete data traceability reducing measurement errors and optimizing drilling operations",
+                    "Seamless integration with industry-leading geological and mining software"
+                  ].map((text, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ duration: 0.8, delay: 1.4 + (index * 0.2) }}
+                      className="flex items-start justify-end space-x-4"
+                    >
+                      <p className="text-gray-400 text-sm leading-relaxed text-right relative">
+                        {text}
+                      </p>
+                      <div className="flex items-center">
+                        <div className="relative w-8 text-right">
+                          <span className="text-sm inline-block text-blue-400">
+                            {(index + 1).toString().padStart(2, '0')}
+                          </span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
