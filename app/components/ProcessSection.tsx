@@ -1,20 +1,19 @@
 'use client'
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { Linkedin, Mail, Calendar } from "lucide-react"
 import { useState, useRef } from "react"
-import { useInView } from "framer-motion"
 
 export default function ProcessSection() {
   const [showFounder, setShowFounder] = useState(false)
-  const secondSectionRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(secondSectionRef, {
+  const contentRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(contentRef, {
     amount: 0.3,
     once: false
   })
 
   return (
-    <section ref={secondSectionRef} className="relative min-h-screen bg-black/50 backdrop-blur-sm">
+    <section className="relative min-h-screen bg-black/50 backdrop-blur-sm">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,102,255,0.05),transparent_70%)]" />
@@ -23,30 +22,23 @@ export default function ProcessSection() {
       <div className="relative z-10 px-8 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl ml-auto">
-            <AnimatePresence mode="wait">
-              {!showFounder ? (
-                <motion.div
-                  key="main-content"
-                  initial={{ opacity: 1 }}
-                  exit={{ 
-                    opacity: 0,
-                    x: -50,
-                    transition: { duration: 0.5, ease: "easeInOut" }
-                  }}
+            <div className="space-y-8">
+              {/* Title - Always Visible */}
+              <h2 className="text-4xl font-bold tracking-tighter text-white text-right">
+                <span className="block transform -skew-x-12">STANDARDIZING</span>
+                <span className="block mt-2 transform -skew-x-12">STRUCTURAL ANALYSIS</span>
+              </h2>
+
+              {/* Animated Content */}
+              <div ref={contentRef}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
                   className="space-y-8"
                 >
                   <div className="flex justify-between items-start">
                     <div className="space-y-8">
-                      <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-4xl font-bold tracking-tighter text-white text-right"
-                      >
-                        <span className="block transform -skew-x-12">STANDARDIZING</span>
-                        <span className="block mt-2 transform -skew-x-12">STRUCTURAL ANALYSIS</span>
-                      </motion.h2>
-                      
                       <div className="space-y-6">
                         <motion.div 
                           initial={{ opacity: 0, y: 20 }}
@@ -132,52 +124,14 @@ export default function ProcessSection() {
                           transition={{ duration: 0.8, delay: 1.4 + (index * 0.2) }}
                           className="flex items-start justify-end space-x-4"
                         >
-                          <motion.p 
-                            className="text-gray-400 text-sm leading-relaxed text-right relative"
-                            animate={isInView && index < 2 ? 
-                              { color: "rgb(34 197 94 / 0.7)" } : 
-                              { color: "rgb(156 163 175)" }
-                            }
-                            transition={{ duration: 0.8 }}
-                          >
+                          <p className="text-gray-400 text-sm leading-relaxed text-right relative">
                             {text}
-                          </motion.p>
+                          </p>
                           <div className="flex items-center">
                             <div className="relative w-8 text-right">
-                              <motion.span 
-                                className="text-sm inline-block"
-                                animate={isInView && index < 2 ? 
-                                  { color: "rgb(34 197 94 / 0.7)" } : 
-                                  { color: "rgb(59 130 246)" }
-                                }
-                                transition={{ duration: 0.8 }}
-                              >
+                              <span className="text-sm inline-block text-blue-400">
                                 {(index + 1).toString().padStart(2, '0')}
-                              </motion.span>
-                              {index < 2 && (
-                                <motion.svg
-                                  className="absolute inset-0 w-full h-full"
-                                  initial={{ pathLength: 0 }}
-                                  animate={isInView ? 
-                                    { pathLength: 1 } : 
-                                    { pathLength: 0 }
-                                  }
-                                  transition={{ 
-                                    duration: 0.5,
-                                    ease: "easeInOut"
-                                  }}
-                                >
-                                  <motion.line
-                                    x1="0"
-                                    y1="50%"
-                                    x2="100%"
-                                    y2="50%"
-                                    stroke="rgb(34 197 94 / 0.7)"
-                                    strokeWidth="1"
-                                    strokeLinecap="round"
-                                  />
-                                </motion.svg>
-                              )}
+                              </span>
                             </div>
                           </div>
                         </motion.div>
@@ -185,101 +139,8 @@ export default function ProcessSection() {
                     </div>
                   </motion.div>
                 </motion.div>
-              ) : (
-                <motion.div
-                  key="founder"
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="space-y-8"
-                >
-                  <div className="flex justify-between items-start gap-12">
-                    {/* Founder Image */}
-                    <motion.div 
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.3, duration: 0.5 }}
-                      className="w-1/3"
-                    >
-                      <div className="aspect-square rounded-[15%] overflow-hidden bg-blue-400/10 border border-blue-400/20">
-                        <img 
-                          src="/founder.jpg" 
-                          alt="Founder" 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </motion.div>
-
-                    {/* Founder Bio */}
-                    <motion.div 
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5, duration: 0.5 }}
-                      className="w-2/3 space-y-8"
-                    >
-                      <div>
-                        <h2 className="text-4xl font-bold tracking-tighter text-white mb-4">
-                          <span className="block transform -skew-x-12">JOAQUIN</span>
-                          <span className="block mt-2 transform -skew-x-12">NAM</span>
-                        </h2>
-                        <p className="text-blue-400 text-sm tracking-wider">FOUNDER & CEO</p>
-                      </div>
-
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        With over a decade of experience in structural geology and mining technology, 
-                        Joaquin founded Andes Oriented Core to revolutionize how mining companies 
-                        analyze and interpret drill core data. His vision combines cutting-edge 
-                        technology with deep geological expertise to create a new standard in 
-                        structural analysis.
-                      </p>
-
-                      {/* Social Links */}
-                      <div className="flex gap-4">
-                        <motion.a
-                          href="https://linkedin.com/in/joaquinnam"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-400 hover:text-blue-400/80 transition-colors"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Linkedin className="w-6 h-6" />
-                        </motion.a>
-                        <motion.a
-                          href="mailto:joaquin@andesorientedcore.com"
-                          className="text-blue-400 hover:text-blue-400/80 transition-colors"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Mail className="w-6 h-6" />
-                        </motion.a>
-                        <motion.a
-                          href="https://calendly.com/joaquinnam"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-400 hover:text-blue-400/80 transition-colors"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Calendar className="w-6 h-6" />
-                        </motion.a>
-                      </div>
-
-                      {/* Back Button */}
-                      <motion.button
-                        onClick={() => setShowFounder(false)}
-                        className="button-flare inline-block bg-blue-400/10 text-blue-400 px-6 py-3 text-sm tracking-wider rounded-[15%] hover:bg-blue-400/20 transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.3)]"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <span className="relative z-10">BACK TO HOME</span>
-                      </motion.button>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+              </div>
+            </div>
           </div>
         </div>
       </div>

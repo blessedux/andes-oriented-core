@@ -1,8 +1,8 @@
 'use client'
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const valueProps = [
   "FROM DRILL CORE TO DIGITAL INSIGHT — IN MINUTES",
@@ -15,6 +15,16 @@ const valueProps = [
 ]
 
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % valueProps.length)
+    }, 4000) // Change text every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <main className="relative z-10 px-8 pt-20">
       <div className="max-w-7xl mx-auto">
@@ -35,27 +45,22 @@ export default function Hero() {
             </h1>
             <div className="space-y-1">
               <p className="text-blue-400 text-sm">" REINVENTED "</p>
-              <div className="text-gray-400 text-xs tracking-wider word-swipe-container h-6 relative">
-                {valueProps.map((text, index) => (
-                  <motion.span 
-                    key={index} 
-                    className="absolute w-full"
+              <div className="text-gray-400 text-xs tracking-wider h-6 relative overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ 
-                      opacity: [0, 1, 1, 0],
-                      y: [20, 0, 0, -20]
-                    }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
                     transition={{
-                      duration: 4,
-                      times: [0, 0.1, 0.9, 1],
-                      repeat: Infinity,
-                      delay: index * 4,
+                      duration: 0.5,
                       ease: "easeInOut"
                     }}
+                    className="absolute w-full"
                   >
-                    {text}
-                  </motion.span>
-                ))}
+                    {valueProps[currentIndex]}
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 
