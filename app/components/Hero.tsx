@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Menu } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function Hero() {
@@ -40,13 +39,17 @@ OF STRUCTURAL ANALYSIS
         <div className="hidden md:flex justify-end pb-12">
           <div className="flex space-x-4">
             <Link 
-              href="/how-it-works"
+              href="https://wiki.andesoricore.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button-flare text-xs text-blue-400 border border-blue-400/20 px-4 py-6 rounded-[15%] hover:bg-blue-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.3)]"
             >
               <span className="relative z-10">SEE HOW IT WORKS</span>
             </Link>
             <Link 
-              href="/early-access"
+              href="https://calendly.com/luis-farfan-andesoricore/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button-flare text-xs text-blue-400 border border-blue-400/20 px-4 py-6 rounded-[15%] hover:bg-blue-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.3)]"
             >
               <span className="relative z-10">REQUEST EARLY ACCESS</span>
@@ -55,27 +58,22 @@ OF STRUCTURAL ANALYSIS
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMobile && (
-        <div className="absolute top-8 right-8">
-          <button className="text-blue-400 hover:text-blue-400/80 transition-colors">
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-      )}
-
       {/* Mobile Buttons */}
       {isMobile && (
         <div className="px-8 pb-12">
           <div className="flex flex-col space-y-4">
             <Link 
-              href="/how-it-works"
+              href="https://wiki.andesoricore.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button-flare text-xs text-blue-400 border border-blue-400/20 px-4 py-6 rounded-[15%] hover:bg-blue-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.3)]"
             >
               <span className="relative z-10">SEE HOW IT WORKS</span>
             </Link>
             <Link 
-              href="/early-access"
+              href="https://calendly.com/luis-farfan-andesoricore/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button-flare text-xs text-blue-400 border border-blue-400/20 px-4 py-6 rounded-[15%] hover:bg-blue-400/10 transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.3)]"
             >
               <span className="relative z-10">REQUEST EARLY ACCESS</span>
