@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --neon-blue: #0066ff;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+body {
+  background-color: black;
+  color: white;
+  cursor: none;
+}
+
+.cursor-spotlight {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: transform 0.1s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+
+.cursor-spotlight::before,
+.cursor-spotlight::after,
+.cursor-spotlight .inner-circle {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-spotlight::before,
+.cursor-spotlight::after {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(0, 102, 255, 0.5);
+}
+
+.cursor-spotlight::before {
+  animation: ripple 6s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.cursor-spotlight::after {
+  animation: ripple 6s cubic-bezier(0, 0.5, 0.5, 1) infinite 3s;
+}
+
+.cursor-spotlight .inner-circle {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 102, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.7);
+}
+
+@keyframes ripple {
+  0% {
+    width: 20%;
+    height: 20%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+.cursor-spotlight.hovering {
+  transform: scale(1.2);
+}
+
+.cursor-spotlight.hovering .inner-circle {
+  background-color: rgba(0, 102, 255, 0.8);
+  box-shadow: 0 0 30px rgba(0, 102, 255, 0.9);
+}
+
+/* Improved hover effects */
+a:hover,
+button:hover,
+[role="button"]:hover {
+  position: relative;
+  z-index: 1;
+}
+
+a,
+button,
+[role="button"] {
+  transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover,
+[role="button"]:hover {
+  text-shadow: 0 0 10px rgba(0, 102, 255, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Word swipe animation */
+@keyframes wordSwipe {
+  0%, 20% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  25%, 45% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50%, 70% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  75%, 95% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.word-swipe-container {
+  height: 1.2em;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.word-swipe {
+  display: inline-block;
+  animation: wordSwipe 12s infinite;
+}
+
+.word-swipe:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.word-swipe:nth-child(3) {
+  animation-delay: 8s;
+}
+
+/* Button flare animations */
+@keyframes flareAnimation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes flarePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+  }
+}
+
+.button-flare {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-flare::before,
+.button-flare::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(0, 102, 255, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(20px);
+}
+
+.button-flare::before {
+  animation: flareAnimation 8s infinite linear;
+}
+
+.button-flare::after {
+  animation: flarePulse 4s infinite ease-in-out;
+  background: radial-gradient(circle at center, rgba(0, 102, 255, 0.3) 0%, transparent 70%);
+}
+
+.button-flare > * {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(8px);
+}
