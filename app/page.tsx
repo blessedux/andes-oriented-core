@@ -28,10 +28,24 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen bg-black overflow-hidden">
-      {/* Background */}
+      {/* Spline 3D Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,102,255,0.1),transparent_70%)]" />
+        <iframe 
+          src="https://my.spline.design/futuristicmapinterface-sMLkl6DgSYLOR3NkjU8OmtMz/" 
+          frameBorder="0" 
+          width="100%" 
+          height="100%"
+          className="absolute inset-0"
+          style={{ 
+            border: 'none',
+            background: 'transparent' 
+          }}
+          loading="lazy"
+          title="Futuristic Map Interface 3D Animation"
+        />
+        {/* Mantiene los gradientes para legibilidad del texto */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,102,255,0.08),transparent_70%)]" />
       </div>
 
       {/* Navigation - Only visible on mobile */}
