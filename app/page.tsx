@@ -11,6 +11,7 @@ import Footer from "./components/Footer"
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isAtBottom, setIsAtBottom] = useState(false)
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -26,16 +27,29 @@ export default function Home() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset
+      const windowHeight = window.innerHeight
+      const docHeight = document.documentElement.scrollHeight
+      // If the user is at the very bottom (allowing a 2px margin)
+      setIsAtBottom(scrollY + windowHeight >= docHeight - 2)
+    }
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div ref={containerRef} className="relative min-h-screen bg-black overflow-hidden">
       {/* Spline 3D Background */}
-      <div className="absolute inset-0 z-0">
+      <div className={`fixed inset-0 w-screen h-screen z-0 pointer-events-none transition-all duration-500 ${isAtBottom ? 'backdrop-blur-md' : ''}`}>
         <iframe 
           src="https://my.spline.design/futuristicmapinterface-sMLkl6DgSYLOR3NkjU8OmtMz/" 
           frameBorder="0" 
           width="100%" 
           height="100%"
-          className="absolute inset-0"
+          className="absolute inset-0 w-full h-full"
           style={{ 
             border: 'none',
             background: 'transparent' 
