@@ -43,7 +43,7 @@ export default function ProductSection() {
           <div className="w-full md:w-1/2 space-y-8">
             <h2 className="text-4xl font-bold text-white">
               A New Era of <br />
-              <span className="text-blue-400">Structural Analysis</span>
+              <span className="text-blue-400">Structural Geology</span>
             </h2>
 
             <div className="word-swipe-container h-12">
@@ -62,7 +62,7 @@ export default function ProductSection() {
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed">
-              Our platform combines cutting-edge technology with geological expertise to provide a comprehensive solution for structural analysis. By standardizing the process and leveraging advanced visualization tools, we're helping geologists make more informed decisions with greater confidence.
+              Our platform combines cutting-edge technology with geological expertise to provide a comprehensive solution for structural data analysis. By standardizing the process and leveraging advanced visualization tools, we're helping geologists make more informed decisions with greater confidence.
             </p>
           </div>
         </div>

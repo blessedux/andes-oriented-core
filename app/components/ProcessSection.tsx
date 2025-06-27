@@ -14,13 +14,13 @@ export default function ProcessSection() {
   const processCards = [
     {
       icon: Scan,
-      title: "SCAN",
-      description: "Upload and scan your core samples with our proprietary measurement system"
+      title: "CAPTURE",
+      description: "Upload your core sample image with our proprietary measurement system"
     },
     {
       icon: Database,
       title: "ANALYZE",
-      description: "Our AI-powered system processes and standardizes your structural data"
+      description: "Our AI-powered system processes and standardizes your structural data capture workflow"
     },
     {
       icon: LineChart,
@@ -43,7 +43,7 @@ export default function ProcessSection() {
               {/* Title - Always Visible */}
               <h2 className="text-4xl font-bold tracking-tighter text-white text-right">
                 <span className="block transform -skew-x-12">STANDARDIZING</span>
-                <span className="block mt-2 transform -skew-x-12">STRUCTURAL ANALYSIS</span>
+                <span className="block mt-2 transform -skew-x-12">STRUCTURAL DATA ANALYSIS</span>
               </h2>
 
               {/* Animated Content */}
@@ -73,7 +73,7 @@ export default function ProcessSection() {
                           transition={{ duration: 0.8, delay: 0.6 }}
                           className="text-gray-400 text-sm leading-relaxed text-right"
                         >
-                          The first standardized platform for precise structural geology analysis. Eliminate human error and ensure data consistency with our proven digital workflow—from core orientation to final structural interpretation.
+                          The first standardized platform for precise structural geology analysis. Eliminate human error and ensure data consistency with our proven digital workflow—from core orientation QA/AC to final structural interpretation.
                         </motion.p>
                       </div>
                     </div>
@@ -127,7 +127,7 @@ export default function ProcessSection() {
           <div className="space-y-4">
             <h3 className="text-blue-400 text-sm tracking-wider text-right">OUR SOLUTION</h3>
             <p className="text-gray-400 text-sm leading-relaxed text-right">
-              Andes Oriented Core digitizes and standardizes the entire structural analysis process, from core orientation to final interpretation, ensuring consistent, reliable data for better drilling decisions.
+              Andes Oriented Core digitizes and standardizes the entire structural data capture and analysis process, from core orientation to final interpretation, including the measurement of strucutral angles, ensuring consistent, reliable data for better drilling decisions.
             </p>
           </div>
         </motion.div>
@@ -149,11 +149,11 @@ export default function ProcessSection() {
                 <h3 className="text-blue-400 text-sm tracking-wider mb-4 text-right">THE PROCESS</h3>
                 <div className="space-y-4">
                   {[
-                    "Digital core orientation using our proprietary measurement system",
+                    "Digital QA/QC for core orientation using our proprietary measurement system",
                     "Automated structural feature detection and measurement",
                     "Standardized data collection with built-in validation",
-                    "Real-time structural interpretation and 3D modeling",
                     "Complete data traceability reducing measurement errors and optimizing drilling operations",
+                    "Structural interpretation and 3D modeling",
                     "Seamless integration with industry-leading geological and mining software"
                   ].map((text, index) => (
                     <motion.div
