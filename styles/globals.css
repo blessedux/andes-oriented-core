@@ -52,7 +52,7 @@ body {
 .cursor-spotlight::after {
   width: 100%;
   height: 100%;
-  border: 2px solid rgba(0, 102, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .cursor-spotlight::before {
@@ -66,8 +66,8 @@ body {
 .cursor-spotlight .inner-circle {
   width: 20px;
   height: 20px;
-  background-color: rgba(0, 102, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 102, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
 @keyframes ripple {
@@ -88,8 +88,8 @@ body {
 }
 
 .cursor-spotlight.hovering .inner-circle {
-  background-color: rgba(0, 102, 255, 0.8);
-  box-shadow: 0 0 30px rgba(0, 102, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
 }
 
 /* Improved hover effects */
