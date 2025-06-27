@@ -49,10 +49,12 @@ export default function Home() {
           frameBorder="0" 
           width="100%" 
           height="100%"
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full scale-120 origin-center"
           style={{ 
             border: 'none',
-            background: 'transparent' 
+            background: 'transparent',
+            transform: 'scale(1.2)',
+            transformOrigin: 'center center'
           }}
           loading="lazy"
           title="Futuristic Map Interface 3D Animation"
