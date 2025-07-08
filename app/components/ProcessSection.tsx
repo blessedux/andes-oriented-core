@@ -71,7 +71,7 @@ export default function ProcessSection() {
                           initial={{ opacity: 0, y: 20 }}
                           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                           transition={{ duration: 0.8, delay: 0.6 }}
-                          className="text-gray-400 text-sm leading-relaxed text-right"
+                          className="text-white text-sm leading-relaxed text-right"
                         >
                           The first standardized platform for precise structural geology analysis. Eliminate human error and ensure data consistency with our proven digital workflow—from core orientation QA/AC to final structural interpretation.
                         </motion.p>
@@ -104,7 +104,7 @@ export default function ProcessSection() {
                   <card.icon className="w-6 h-6 text-blue-400" />
                 </div>
                 <h3 className="text-blue-400 text-sm tracking-wider">{card.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{card.description}</p>
+                <p className="text-white text-sm leading-relaxed">{card.description}</p>
               </div>
             </motion.div>
           ))}
@@ -119,14 +119,14 @@ export default function ProcessSection() {
         >
           <div className="space-y-4">
             <h3 className="text-blue-400 text-sm tracking-wider text-right">THE CHALLENGE</h3>
-            <p className="text-gray-400 text-sm leading-relaxed text-right">
+            <p className="text-white text-sm leading-relaxed text-right">
               Traditional structural logging relies on manual measurements and subjective interpretations, leading to inconsistent data collection and potential errors that can impact exploration decisions.
             </p>
           </div>
           
           <div className="space-y-4">
             <h3 className="text-blue-400 text-sm tracking-wider text-right">OUR SOLUTION</h3>
-            <p className="text-gray-400 text-sm leading-relaxed text-right">
+            <p className="text-white text-sm leading-relaxed text-right">
               Andes Oriented Core digitizes and standardizes the entire structural data capture and analysis process, from core orientation to final interpretation, including the measurement of strucutral angles, ensuring consistent, reliable data for better drilling decisions.
             </p>
           </div>
@@ -163,7 +163,7 @@ export default function ProcessSection() {
                       transition={{ duration: 0.8, delay: 1.4 + (index * 0.2) }}
                       className="flex items-start justify-end space-x-4"
                     >
-                      <p className="text-gray-400 text-sm leading-relaxed text-right relative">
+                      <p className="text-white text-sm leading-relaxed text-right relative">
                         {text}
                       </p>
                       <div className="flex items-center">

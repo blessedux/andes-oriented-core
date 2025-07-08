@@ -61,7 +61,7 @@ export default function ProductSection() {
               </AnimatePresence>
             </div>
 
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Our platform combines cutting-edge technology with geological expertise to provide a comprehensive solution for structural data analysis. By standardizing the process and leveraging advanced visualization tools, we're helping geologists make more informed decisions with greater confidence.
             </p>
           </div>
