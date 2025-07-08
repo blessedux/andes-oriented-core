@@ -54,7 +54,7 @@ export default function ProductSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="text-blue-400 text-sm"
+                  className="text-white text-sm"
                 >
                   {valueProps[currentIndex]}
                 </motion.p>

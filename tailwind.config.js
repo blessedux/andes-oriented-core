@@ -44,6 +44,20 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom brighter blue colors
+        blue: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#00a3ff', // Much brighter blue-400 - vibrant cyan-blue
+          500: '#0099ff',
+          600: '#0088ff',
+          700: '#0077ff',
+          800: '#0066ff',
+          900: '#0055ff',
+          950: '#0044ff',
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

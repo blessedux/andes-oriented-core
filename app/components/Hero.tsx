@@ -28,7 +28,7 @@ export default function Hero() {
               <span className="block transform -skew-x-12">CORE</span>
             </h1>
             <div className="space-y-1">
-              <p className="text-blue-400 text-sm"> STANDARDIZING THE ART
+              <p className="text-white text-base font-medium"> STANDARDIZING THE ART
 OF STRUCTURAL GEOLOGY
   </p>
             </div>
