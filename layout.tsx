@@ -11,8 +11,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Varti Studio</title>
-        <meta name="description" content="Create habit challenges with friends" />
+        <title>AndesOriCore - Digital Structural Logging, Reinvented</title>
+        <meta name="description" content="A web-based platform to analyze core samples with precision, traceability, and full control—no third parties, no delays." />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

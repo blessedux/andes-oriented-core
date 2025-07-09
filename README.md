@@ -88,8 +88,12 @@ andes-oriented-core/
 
 This project is proprietary software. All rights reserved.
 
-## Contact
+## Credits
 
-Joaquin Nam - [LinkedIn](https://linkedin.com/in/joaquinnam)
+**AndesOriCore** © 2025 - Digital Structural Logging, Reinvented
+
+**Design & Development**: MenteMaestra Design Studio (blessedux)
+
+## Contact
 
 Project Link: [https://github.com/blessedux/andes-oriented-core](https://github.com/blessedux/andes-oriented-core)

@@ -33,7 +33,11 @@ export default function ProductSection() {
               <div className="absolute inset-4 bg-black/50 rounded-[2rem] backdrop-blur-sm">
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-blue-400/20 rounded-full" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-4/5 h-4/5 bg-gradient-to-br from-blue-400/10 to-transparent rounded-2xl border border-blue-400/20" />
+                  <img 
+                    src="/logger1.png" 
+                    alt="AndesOriCore Logger Interface" 
+                    className="w-4/5 h-4/5 object-cover rounded-2xl"
+                  />
                 </div>
               </div>
             </div>

@@ -31,7 +31,7 @@ export default function DashboardPage() {
           <header className="bg-black/50 backdrop-blur-md border-b border-[#00FF00]/20 p-4">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
               <Link href="/" className="text-[#00FF00] text-xl font-bold">
-                VARTI
+                AndesOriCore
               </Link>
               <nav>
                 <Link href="/profile" className="text-[#00FF00] hover:text-[#00FF00]/80 transition-colors">
