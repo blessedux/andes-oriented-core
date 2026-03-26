@@ -13,6 +13,10 @@
 .DS_Store
 **/.DS_Store
 
+# local agent/editor metadata
+**/.agents/
+**/skills-lock.json
+
 # production
 /build
 
