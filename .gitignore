@@ -9,6 +9,10 @@
 **/.next/
 /out/
 
+# macOS
+.DS_Store
+**/.DS_Store
+
 # production
 /build
 
