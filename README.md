@@ -1,99 +1,39 @@
-# Andes Oriented Core
+# AndesOriCore Monorepo
 
-A modern web platform revolutionizing structural geology analysis through digital innovation. Andes Oriented Core provides a standardized solution for precise core sample analysis, ensuring data consistency and eliminating human error in the mining industry.
+Initial monorepo setup with two separate Next.js applications:
 
-## Overview
+- `apps/landingpage`: existing marketing/landing page codebase
+- `apps/wiki`: initial wiki app scaffold
 
-Andes Oriented Core is a web-based platform that digitizes and standardizes the entire structural analysis process, from core orientation to final interpretation. Our solution ensures consistent, reliable data collection for better drilling decisions in mining operations.
+## Requirements
 
-### Key Features
+- Node.js 18+
+- npm 9+
 
-- Digital core orientation using proprietary measurement system
-- Automated structural feature detection and measurement
-- Standardized data collection with built-in validation
-- Real-time structural interpretation and 3D modeling
-- Complete data traceability
-- Seamless integration with industry-leading geological software
-
-## Technology Stack
-
-### Frontend
-
-- **Framework**: Next.js 14 (React)
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **UI Components**: Custom components with shadcn/ui
-- **Icons**: Lucide Icons
-
-### Development Tools
-
-- **Language**: TypeScript
-- **Package Manager**: pnpm
-- **Code Quality**: ESLint
-- **Version Control**: Git
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or later
-- pnpm 8.x or later
-
-### Installation
-
-1. Clone the repository:
+## Install
 
 ```bash
-git clone https://github.com/blessedux/andes-oriented-core.git
-cd andes-oriented-core
+npm install
 ```
 
-2. Install dependencies:
+## Run Apps
+
+Landing page (port 3000):
 
 ```bash
-pnpm install
+npm run dev:landingpage
 ```
 
-3. Run the development server:
+Wiki (port 3001):
 
 ```bash
-pnpm dev
+npm run dev:wiki
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## Workspace Structure
 
-## Project Structure
-
+```bash
+apps/
+  landingpage/
+  wiki/
 ```
-andes-oriented-core/
-├── app/                    # Next.js app directory
-│   ├── components/        # Reusable components
-│   ├── globals.css       # Global styles
-│   └── page.tsx          # Main page component
-├── components/            # Shared components
-│   └── ui/               # UI components
-├── public/               # Static assets
-└── styles/              # Additional styles
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is proprietary software. All rights reserved.
-
-## Credits
-
-**AndesOriCore** © 2025 - Digital Structural Logging, Reinvented
-
-**Design & Development**: MenteMaestra Design Studio (blessedux)
-
-## Contact
-
-Project Link: [https://github.com/blessedux/andes-oriented-core](https://github.com/blessedux/andes-oriented-core)
