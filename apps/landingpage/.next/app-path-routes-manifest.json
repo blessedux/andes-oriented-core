@@ -1,0 +1,8 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/create-challenge/page": "/create-challenge",
+  "/signup/page": "/signup",
+  "/login/page": "/login",
+  "/dashboard/page": "/dashboard",
+  "/page": "/"
+}
