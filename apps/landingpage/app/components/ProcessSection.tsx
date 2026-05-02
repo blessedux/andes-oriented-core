@@ -127,7 +127,7 @@ export default function ProcessSection() {
           <div className="space-y-4">
             <h3 className="text-blue-400 text-sm tracking-wider text-right">OUR SOLUTION</h3>
             <p className="text-white text-sm leading-relaxed text-right">
-              Andes Oriented Core digitizes and standardizes the entire structural data capture and analysis process, from core orientation to final interpretation, including the measurement of strucutral angles, ensuring consistent, reliable data for better drilling decisions.
+              Andes Oriented Core digitizes and standardizes the entire structural data capture and analysis process, from core orientation to final interpretation, including the measurement of strucutral angles, ensuring consistent, reliable data for better exploration and production decisions.
             </p>
           </div>
         </motion.div>

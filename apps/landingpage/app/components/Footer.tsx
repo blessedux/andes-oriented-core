@@ -11,7 +11,7 @@ export default function Footer() {
           <span className="text-blue-400">1</span>
         </div>
         <div className="text-[10px] text-gray-500">
-          2025 © ANDESORICORE - DIGITAL STRUCTURAL LOGGING, REINVENTED
+          2026 © ANDESORICORE - DIGITAL STRUCTURAL LOGGING, REINVENTED
         </div>
       </div>
     </footer>
