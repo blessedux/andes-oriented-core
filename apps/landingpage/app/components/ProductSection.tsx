@@ -68,8 +68,8 @@ export default function ProductSection() {
           {/* Right side - Content */}
           <div className="w-full md:w-1/2 space-y-8">
             <h2 className="text-4xl font-bold text-white">
-              A New Era of <br />
-              <span className="text-blue-400">Structural Geology</span>
+              Standardizing Core Logging <br />
+              <span className="text-blue-400">and Structural Data Analysis</span>
             </h2>
 
             <div className="word-swipe-container h-12">

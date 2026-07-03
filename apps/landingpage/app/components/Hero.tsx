@@ -29,7 +29,7 @@ export default function Hero() {
             </h1>
             <div className="space-y-1">
               <p className="text-white text-base font-medium"> STANDARDIZING THE ART
-OF STRUCTURAL GEOLOGY
+OF CORE LOGGING
   </p>
             </div>
           </div>

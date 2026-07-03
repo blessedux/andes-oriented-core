@@ -13,9 +13,9 @@ export default function ProcessSection() {
 
   const processCards = [
     {
-      icon: Scan,
-      title: "CAPTURE",
-      description: "Upload your core sample image with our proprietary measurement system"
+      icon: LineChart,
+      title: "VISUALIZE",
+      description: "Get real-time 3D visualizations and insights for better decision making"
     },
     {
       icon: Database,
@@ -23,9 +23,9 @@ export default function ProcessSection() {
       description: "Our AI-powered system processes and standardizes your structural data capture workflow"
     },
     {
-      icon: LineChart,
-      title: "VISUALIZE",
-      description: "Get real-time 3D visualizations and insights for better decision making"
+      icon: Scan,
+      title: "CAPTURE",
+      description: "Upload your core sample image with our proprietary measurement system"
     }
   ]
 
