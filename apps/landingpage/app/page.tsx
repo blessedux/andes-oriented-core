@@ -42,27 +42,35 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative min-h-screen bg-black overflow-hidden">
-      {/* Spline 3D Background */}
-      <div className={`fixed inset-0 w-screen h-screen z-0 pointer-events-none transition-all duration-500 ${isAtBottom ? 'backdrop-blur-md' : ''}`}>
-        <iframe 
-          src="https://my.spline.design/futuristicmapinterface-sMLkl6DgSYLOR3NkjU8OmtMz/" 
-          frameBorder="0" 
-          width="100%" 
-          height="100%"
-          className="absolute inset-0 w-full h-full scale-120 origin-center"
-          style={{ 
-            border: 'none',
-            background: 'transparent',
-            transform: 'scale(1.2)',
-            transformOrigin: 'center center'
-          }}
-          loading="lazy"
-          title="Futuristic Map Interface 3D Animation"
-        />
-        {/* Mantiene los gradientes para legibilidad del texto */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,102,255,0.08),transparent_70%)]" />
-      </div>
+      {/* Spline 3D Background — desktop only */}
+      {!isMobile && (
+        <div className={`fixed inset-0 w-screen h-screen z-0 pointer-events-none transition-all duration-500 ${isAtBottom ? 'backdrop-blur-md' : ''}`}>
+          <iframe 
+            src="https://my.spline.design/futuristicmapinterface-sMLkl6DgSYLOR3NkjU8OmtMz/" 
+            frameBorder="0" 
+            width="100%" 
+            height="100%"
+            className="absolute inset-0 w-full h-full scale-120 origin-center"
+            style={{ 
+              border: 'none',
+              background: 'transparent',
+              transform: 'scale(1.2)',
+              transformOrigin: 'center center'
+            }}
+            loading="lazy"
+            title="Futuristic Map Interface 3D Animation"
+          />
+          {/* Mantiene los gradientes para legibilidad del texto */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,102,255,0.08),transparent_70%)]" />
+        </div>
+      )}
+      {isMobile && (
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,102,255,0.08),transparent_70%)]" />
+        </div>
+      )}
 
       {/* Navigation - Only visible on mobile */}
       {isMobile && (

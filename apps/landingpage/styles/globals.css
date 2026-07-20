@@ -23,7 +23,12 @@
 body {
   background-color: black;
   color: white;
-  cursor: none;
+}
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
 }
 
 .cursor-spotlight {
